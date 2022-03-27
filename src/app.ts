@@ -1,3 +1,6 @@
+
+import {Post} from "./modules/post";
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -18,3 +21,6 @@ const app = initializeApp(firebaseConfig);
 
 
 
+const postOne = new Post("Talang", "Hii i feel good", 13);
+
+postOne.console();
