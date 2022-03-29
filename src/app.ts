@@ -21,6 +21,9 @@ const app = initializeApp(firebaseConfig);
 
 
 
-const postOne = new Post("Talang", "Hii i feel good", 13);
+const postOne = new Post("Talang", "Hii i feel good", new Date());
 
-postOne.console();
+console.log(postOne);
+let postArray: Post[] = [];
+
+postArray.push(postOne);

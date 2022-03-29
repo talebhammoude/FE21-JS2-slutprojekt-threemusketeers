@@ -1,20 +1,16 @@
 export class Post {
+
     username: string;
-    thePost: string;
-    timestamp: number;
+    text: string;
+    time: Date;
 
-
-    constructor (usr: string, post: string, time: number) {
-        this.username = usr;
-        this.thePost = post;
-        this.timestamp = time;
-    }
-
-
-    console () {
-
-        console.log(this.username);
-    }
+    constructor (uname: string, txt: string, t: Date) {
     
+        this.username = uname;
+        this.text = txt;
+        this.time = t;
+    }
 
 }
+
+
