@@ -25,7 +25,7 @@ const db = getFirestore(app);
 
 const postOne = new Post("Talang", "Hii i feel good", new Date());
 
-console.log(postOne);
+console.log(postOne.username);
 let postArray: Post[] = [];
 
 postArray.push(postOne);
@@ -36,9 +36,9 @@ async function writeToDb() {
 
   try {
     const docRef = await addDoc(collection(db, "post"), {
-      user: "Ada",
-      text: "Lovelace",
-      time: 1815
+      user: postOne.username,
+      text: postOne.text,
+      time: postOne.time
     });
     console.log("Document written with ID: ", docRef.id);
   } catch (e) {
@@ -47,4 +47,4 @@ async function writeToDb() {
 }
 
 
-//writeToDb();
+writeToDb();
