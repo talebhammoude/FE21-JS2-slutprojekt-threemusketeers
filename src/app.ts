@@ -21,18 +21,15 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 
+const userValue = document.querySelector(".user-class").innerHTML;
+const postText = document.querySelector(".post-text") as HTMLDataElement
+const postBtn = document.querySelector(".post-btn");
 
-
-const postOne = new Post("Talang", "Hii i feel good", new Date());
-
-console.log(postOne.username);
-let postArray: Post[] = [];
-
-postArray.push(postOne);
 
 
 
 async function writeToDb() {
+  const postOne = new Post(userValue, postText.value, new Date());
 
   try {
     const docRef = await addDoc(collection(db, "post"), {
@@ -47,4 +44,13 @@ async function writeToDb() {
 }
 
 
-writeToDb();
+
+
+
+
+postBtn.addEventListener("click", (e)=>{
+    e.preventDefault();
+    writeToDb();
+    postText.value = "";
+    
+})
