@@ -1,7 +1,7 @@
-// Import the functions you need from the SDKs you need
+import {Post} from "./modules/post";
 import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getFirestore, collection, addDoc } from "firebase/firestore";
+
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -17,4 +17,40 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 
+// Initialize Cloud Firestore and get a reference to the service
+const db = getFirestore(app);
 
+
+const userValue = document.querySelector(".user-class").innerHTML;
+const postText = document.querySelector(".post-text") as HTMLDataElement
+const postBtn = document.querySelector(".post-btn");
+
+
+
+
+async function writeToDb() {
+  const postOne = new Post(userValue, postText.value, new Date());
+
+  try {
+    const docRef = await addDoc(collection(db, "post"), {
+      user: postOne.username,
+      text: postOne.text,
+      time: postOne.time
+    });
+    console.log("Document written with ID: ", docRef.id);
+  } catch (e) {
+    console.error("Error adding document: ", e);
+  }
+}
+
+
+
+
+
+
+postBtn.addEventListener("click", (e)=>{
+    e.preventDefault();
+    writeToDb();
+    postText.value = "";
+    
+})

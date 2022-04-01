@@ -1,0 +1,14 @@
+.form-div {
+    border: gray solid 2px;
+}
+
+.user-span {
+    color: black;
+    font-weight: bolder;
+}
+
+#form-wrapper{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
