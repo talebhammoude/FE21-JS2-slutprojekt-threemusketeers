@@ -4,7 +4,7 @@ import { getFirestore, collection, addDoc } from "firebase/firestore";
 import { firebaseConfig } from "../modules/firebaseconfig";
 
 
-import { renderPostList } from "../modules/postlist";
+import { renderPostList } from "../modules/postlist-fotball";
 
 
 // Initialize Firebase
