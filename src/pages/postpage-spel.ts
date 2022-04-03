@@ -4,7 +4,7 @@ import { getFirestore, collection, addDoc } from "firebase/firestore";
 import { firebaseConfig } from "../modules/firebaseconfig";
 
 
-import { renderPostList } from "../modules/postlist-fotball";
+import { renderPostListSpel } from "../modules/postlist-spel";
 
 
 // Initialize Firebase
@@ -20,7 +20,7 @@ const postText = document.querySelector(".post-text") as HTMLDataElement
 const postBtn = document.querySelector(".post-btn");
 
 
-renderPostList();
+renderPostListSpel();
 
 
 async function writeToDb() {

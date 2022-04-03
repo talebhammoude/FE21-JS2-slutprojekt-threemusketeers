@@ -11,10 +11,10 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 const postsRef = collection(db, "post");
-const q = query(postsRef, where("category", "==", 1) ,orderBy("time"));
+const q = query(postsRef, where("category", "==", 3) ,orderBy("time"));
 
 
-async function renderPostListFotboll() {
+async function renderPostListSpel() {
 
     const querySnapshot = await getDocs(q);
 
@@ -34,4 +34,4 @@ async function renderPostListFotboll() {
 }
 
 
-export {renderPostListFotboll};
+export {renderPostListSpel};
