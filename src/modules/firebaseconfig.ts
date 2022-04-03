@@ -1,6 +1,6 @@
 // Your web app's Firebase configuration
 import { initializeApp } from "firebase/app";
-import { getDatabase } from "firebase/database";
+import { ref, update, get, child, getDatabase } from "firebase/database";
 
 
 const firebaseConfig = {
@@ -16,7 +16,10 @@ const firebaseConfig = {
    export {firebaseConfig};
 
 
+
+  const app =initializeApp(firebaseConfig)
+  export const db = getDatabase(app);
+
   const dbApp =initializeApp(firebaseConfig)
 
   export const db = getDatabase(dbApp);
-
