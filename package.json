@@ -7,7 +7,7 @@
     "Chrome>95"
   ],
   "scripts": {
-    "dev": "parcel ./src/post-page.html",
+    "dev": "parcel ./src/postpage-fotboll.html",
     "build": "parcel build ./src/index.html --dist-dir docs --public-url ./",
     "clean": "del-cli ./.parcel-cache ./docs ./dist"
   },
