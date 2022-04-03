@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { getFirestore, collection, getDocs, query, orderBy, doc } from "firebase/firestore";
 import { firebaseConfig } from "./firebaseconfig";
 
 
@@ -10,10 +10,15 @@ const app = initializeApp(firebaseConfig);
 // Initialize Cloud Firestore and get a reference to the service
 const db = getFirestore(app);
 
+const postsRef = collection(db, "post");
+const q = query(postsRef, orderBy("time"));
+
 
 async function renderPostList() {
 
-    const querySnapshot = await getDocs(collection(db, "post"));
+    const querySnapshot = await getDocs(q);
+    
+    
     querySnapshot.forEach((doc) => {
     console.log(doc.data());
 
@@ -26,6 +31,8 @@ async function renderPostList() {
     </div>
    `
 });
+
+console.log(q);
 }
 
 
