@@ -1,10 +1,10 @@
-import {Post} from "./modules/post";
+import {Post} from "../modules/post"
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
-import { firebaseConfig } from "./modules/firebaseconfig";
+import { firebaseConfig } from "../modules/firebaseconfig";
 
 
-import { renderPostList } from "./modules/postlist";
+import { renderPostList } from "../modules/postlist";
 
 
 // Initialize Firebase
