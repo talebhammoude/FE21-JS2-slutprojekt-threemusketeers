@@ -24,13 +24,14 @@ renderPostList();
 
 
 async function writeToDb() {
-  const postOne = new Post(userValue, postText.value, new Date());
+  const postObj = new Post(userValue, postText.value, 1, new Date());
 
   try {
     const docRef = await addDoc(collection(db, "post"), {
-      user: postOne.username,
-      text: postOne.text,
-      time: postOne.time
+      user: postObj.username,
+      text: postObj.text,
+      category: postObj.category,
+      time: postObj.time
     });
     console.log("Document written with ID: ", docRef.id);
   } catch (e) {

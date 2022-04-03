@@ -17,11 +17,9 @@ const q = query(postsRef, orderBy("time"));
 async function renderPostList() {
 
     const querySnapshot = await getDocs(q);
-    
-    
-    querySnapshot.forEach((doc) => {
-    console.log(doc.data());
 
+    querySnapshot.forEach((doc) => {
+    
     document.querySelector(".post-list").innerHTML += `
     <div class="the-post">
        <h2>
@@ -32,7 +30,7 @@ async function renderPostList() {
    `
 });
 
-console.log(q);
+
 }
 
 
