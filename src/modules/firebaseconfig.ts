@@ -19,6 +19,4 @@ const firebaseConfig = {
 
   
 
-  const dbApp =initializeApp(firebaseConfig)
-
-  export const db = getDatabase(dbApp);
+ 
