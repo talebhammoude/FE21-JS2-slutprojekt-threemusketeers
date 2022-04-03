@@ -1,10 +1,10 @@
 import { initializeApp } from "firebase/app";
 import { firebaseConfig } from "./firebaseconfig";
 import { db } from "./firebaseconfig";
-import { ref, update, get, child, getDatabase } from "firebase/database";
+import { ref, getDatabase, get, update, child } from "firebase/database";
 import { DisplaySignLog } from "./domSignLog";
 
-const app = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 const dbRef = ref(db, "/userlist/");
 const display = new DisplaySignLog();
 
@@ -27,7 +27,6 @@ export class SignUpSignIn {
       this.password = document.querySelector("#password");
       this.bio = document.querySelector("#bio");
       
-      //(checka detta) //byta plats på felmedelandena?
       get(child(dbRef, `userlist/${this.username.value}`)).then(
         (snapshot) => {
 
@@ -36,7 +35,7 @@ export class SignUpSignIn {
           } else if (this.password.value != snapshot.val().password) {
             display.wrongPassword();
           } else if (this.password.value == snapshot.val().password) {
-            location.href = "html/katesidan.html"; //kategorisidan här (2)
+            location.href = "html/katesidan.html"; 
           }
         }
       );
@@ -71,7 +70,7 @@ export class SignUpSignIn {
               newUser[Key] = newUserInfo;
               update(dbRef, newUser);
             }
-            location.href = "html/katesidan.html"; //kategorisidan här (1)
+            location.href = "html/katesidan.html"; 
           }
         });
       }

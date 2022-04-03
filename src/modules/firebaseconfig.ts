@@ -1,8 +1,8 @@
 // Your web app's Firebase configuration
 import { initializeApp } from "firebase/app";
-import { ref, update, get, child, getDatabase } from "firebase/database";
+import { getDatabase } from "firebase/database";
 
-
+//ingen databaseURL? kanske det som är problemet?
 const firebaseConfig = {
   apiKey: "AIzaSyAPKpit5d04AWFT78SRxmw69uKq1QvSMJE",
   authDomain: "slutprojekt-388c9.firebaseapp.com",
