@@ -12,3 +12,9 @@
     justify-content: center;
     justify-items: center;
 }
+
+
+.the-post{
+    border: brown solid 1px;
+    margin: 5px;
+}
