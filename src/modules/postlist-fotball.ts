@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, query, orderBy, doc } from "firebase/firestore";
+import { getFirestore, collection, getDocs, query, orderBy, where } from "firebase/firestore";
 import { firebaseConfig } from "./firebaseconfig";
 
 
@@ -11,7 +11,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 const postsRef = collection(db, "post");
-const q = query(postsRef, orderBy("time"));
+const q = query(postsRef, orderBy("time"), where("category", "==", "1"));
 
 
 async function renderPostList() {
