@@ -1,5 +1,9 @@
 // Your web app's Firebase configuration
-const firebaseConfig = {
+import { initializeApp } from "firebase/app";
+import { getDatabase } from "firebase/database";
+
+
+ export const firebaseConfig = {
     apiKey: "AIzaSyAPKpit5d04AWFT78SRxmw69uKq1QvSMJE",
     authDomain: "slutprojekt-388c9.firebaseapp.com",
     projectId: "slutprojekt-388c9",
@@ -9,4 +13,8 @@ const firebaseConfig = {
   };
 
 
-  export {firebaseConfig};
+  // export {firebaseConfig};
+
+
+  const dbApp =initializeApp(firebaseConfig)
+  export const db = getDatabase(dbApp);
