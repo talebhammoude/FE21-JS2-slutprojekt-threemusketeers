@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { firebaseConfig } from "./firebaseconfig";
 import { db } from "./firebaseconfig";
-import { ref, getDatabase, get, update, child } from "firebase/database";
+import { ref, update, get, child, getDatabase } from "firebase/database";
 import { DisplaySignLog } from "./domSignLog";
 
 initializeApp(firebaseConfig);
@@ -35,7 +35,7 @@ export class SignUpSignIn {
           } else if (this.password.value != snapshot.val().password) {
             display.wrongPassword();
           } else if (this.password.value == snapshot.val().password) {
-            location.href = "html/katesidan.html"; 
+            location.href = "./html/katesidan.html"; 
           }
         }
       );
@@ -70,7 +70,7 @@ export class SignUpSignIn {
               newUser[Key] = newUserInfo;
               update(dbRef, newUser);
             }
-            location.href = "html/katesidan.html"; 
+            location.href = "./html/katesidan.html"; 
           }
         });
       }
