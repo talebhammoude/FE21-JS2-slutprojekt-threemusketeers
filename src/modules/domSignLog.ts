@@ -50,12 +50,10 @@ export class DisplaySignLog {
     const inputBoxError: HTMLElement = document.getElementById("title-error");
     inputBoxError.innerText = "[Don't forget to fill out every box]";
   }
-
   public userExist(): void {
     const userExists: HTMLElement = document.getElementById("title-error");
     userExists.innerText = "[This username is taken]";
   }
-
   public wrongPassword(): void {
     const wrongPassword: HTMLElement = document.getElementById("title-error");
     wrongPassword.innerText = "[Wrong password, try again]";
