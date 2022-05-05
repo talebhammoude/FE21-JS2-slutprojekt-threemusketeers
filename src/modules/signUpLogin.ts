@@ -32,9 +32,13 @@ export class SignUpSignIn {
 
           if (this.username.value == "" || this.password.value == "") {
             display.fillInputBox();
+            
           } else if (this.password.value != snapshot.val().password) {
             display.wrongPassword();
           } else if (this.password.value == snapshot.val().password) {
+           
+            
+            localStorage.setItem('loginName', this.username.value);
             location.href = "./html/katesidan.html"; 
           }
         }
