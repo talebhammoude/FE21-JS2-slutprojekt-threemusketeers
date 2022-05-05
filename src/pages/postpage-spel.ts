@@ -7,6 +7,15 @@ import { firebaseConfig } from "../modules/firebaseconfig";
 import { renderPostListSpel } from "../modules/postlist-spel";
 
 
+
+
+
+let loginUserName = document.querySelector(".user-class") as HTMLInputElement;
+loginUserName.value = localStorage.getItem("loginName");
+loginUserName.innerHTML = localStorage.getItem("loginName");
+
+
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 

@@ -7,6 +7,14 @@ import { firebaseConfig } from "../modules/firebaseconfig";
 import { renderPostListMusik } from "../modules/postlist-musik";
 
 
+
+
+let loginUserName = document.querySelector(".user-class") as HTMLInputElement;
+loginUserName.value = localStorage.getItem("loginName");
+loginUserName.innerHTML = localStorage.getItem("loginName");
+
+
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
