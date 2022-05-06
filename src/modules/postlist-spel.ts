@@ -22,9 +22,7 @@ async function renderPostListSpel() {
     
     document.querySelector(".post-list").innerHTML += `
     <div class="the-post">
-       <h2>
-           ${doc.data().user}
-       </h2>
+    <h2 class="postUserName" value="${doc.data().user}">${doc.data().user}</h2>
        <p class="theText">${doc.data().text}</p>
     </div>
    `

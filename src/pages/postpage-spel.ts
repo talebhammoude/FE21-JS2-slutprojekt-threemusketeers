@@ -10,10 +10,11 @@ import { renderPostListSpel } from "../modules/postlist-spel";
 
 
 
+
 let loginUserName = document.querySelector(".user-class") as HTMLInputElement;
+let storedLoginName:string = localStorage.getItem("loginName");
 loginUserName.value = localStorage.getItem("loginName");
 loginUserName.innerHTML = localStorage.getItem("loginName");
-
 
 
 // Initialize Firebase
@@ -60,3 +61,31 @@ postBtn.addEventListener("click", (e)=>{
 })
 
 
+setTimeout(deleteButtonFunction, 1000);
+
+
+function deleteButtonFunction () {
+
+    document.querySelectorAll(".postUserName").forEach((e)=>{
+
+      if(e.getAttribute("value") == storedLoginName ){
+        e.innerHTML += `
+        <button class="deleteBtn">X</button>
+        `
+      }
+
+  })
+
+
+
+  document.querySelectorAll("button").forEach((e)=>{
+
+    e.addEventListener("click", (event) => {
+      event.preventDefault();
+      console.log("Talaaanngg!!!");
+    })
+  
+  })
+
+
+}
