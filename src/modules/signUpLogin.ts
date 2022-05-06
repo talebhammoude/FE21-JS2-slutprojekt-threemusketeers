@@ -86,7 +86,8 @@ export class SignUpSignIn {
   public deleteUserAccount(): void {
     remove(ref(db, "userlist/" + localStorage.getItem("loginName")))
     .then(()=>{
-      location.href = "./index.html"; 
+      setTimeout(location.href = "./index.html" , 1000);
+      
     })
   }
 
