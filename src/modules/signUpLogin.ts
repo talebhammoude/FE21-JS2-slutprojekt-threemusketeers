@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { firebaseConfig } from "./firebaseconfig";
 import { db } from "./firebaseconfig";
-import { ref, update, get, child, getDatabase } from "firebase/database";
+import { ref, update, get, child, getDatabase, remove } from "firebase/database";
 import { DisplaySignLog } from "./domSignLog";
 
 initializeApp(firebaseConfig);
@@ -80,4 +80,17 @@ export class SignUpSignIn {
       }
     });
   }
+
+
+  // delete user
+  public deleteUserAccount(): void {
+    remove(ref(db, "userlist/" + localStorage.getItem("loginName")))
+    .then(()=>{
+      location.href = "./index.html"; 
+    })
+  }
+
+
+
+
 }
