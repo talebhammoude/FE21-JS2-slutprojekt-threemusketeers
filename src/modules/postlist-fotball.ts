@@ -19,12 +19,12 @@ async function renderPostListFotboll() {
     const querySnapshot = await getDocs(q);
 
     querySnapshot.forEach((doc) => {
+
     
     document.querySelector(".post-list").innerHTML += `
     <div class="the-post">
-       <h2 class="postUserName" value="${doc.data().user}">${doc.data().user}</h2>
+       <h2 class="postUserName" id=${doc.id} value="${doc.data().user}">${doc.data().user}</h2>
        <p class="theText">${doc.data().text}</p>
-       
     </div>
    `
 

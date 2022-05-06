@@ -1,6 +1,6 @@
 import {Post} from "../modules/post";
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { getFirestore, collection, addDoc, doc, deleteDoc } from "firebase/firestore";
 import { firebaseConfig } from "../modules/firebaseconfig";
 
 
@@ -76,12 +76,20 @@ function deleteButtonFunction () {
   })
 
 
+  async function deleteFromDb (theIdToDelete) {
+
+    await deleteDoc(doc(db, "post", theIdToDelete));
+
+  }
+
+
 
   document.querySelectorAll("button").forEach((e)=>{
 
     e.addEventListener("click", (event) => {
       event.preventDefault();
-      console.log("Talaaanngg!!!");
+      deleteFromDb(event.path[1].id);
+      
     })
   
   })
