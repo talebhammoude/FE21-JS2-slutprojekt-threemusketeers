@@ -74,4 +74,24 @@ function deleteButtonFunction () {
   })
 
 
+
+  document.querySelectorAll("button").forEach((e)=>{
+
+    e.addEventListener("click", (event) => {
+      event.preventDefault();
+      console.log("Talaaanngg!!!");
+    })
+  
+  })
+
+
 }
+
+
+
+
+
+
+
+
+
