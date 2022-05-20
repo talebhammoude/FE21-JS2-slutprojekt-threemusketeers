@@ -146,7 +146,7 @@
           a.remove(
             a.ref(l.db, "userlist/" + localStorage.getItem("loginName"))
           ).then(function () {
-            setTimeout((location.href = "../index.html"), 1e3);
+            setTimeout((location.href = "../index.html"), 1000);
           });
         }),
         e
