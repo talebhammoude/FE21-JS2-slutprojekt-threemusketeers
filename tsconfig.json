@@ -2,6 +2,8 @@
     "include": ["src/**/*"],
     "compilerOptions": {
       "target": "es2021",
-      "strict": false
+      "strict": false,
+      "isolatedModules": true
     }
+    
   }
