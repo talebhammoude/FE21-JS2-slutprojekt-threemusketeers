@@ -2,6 +2,6 @@
     "include": ["src/**/*"],
     "compilerOptions": {
       "target": "es2021",
-      "strict": true  
+      "strict": false
     }
   }
