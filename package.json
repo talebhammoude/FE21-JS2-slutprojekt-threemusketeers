@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "dev": "parcel ./src/index.html",
-    "build": "parcel build ./src/index.html --dist-dir docs",
+    "build": "parcel build ./src/index.html --dist-dir docs --public-url ./",
     "clean": "del-cli ./.parcel-cache ./docs ./dist"
   },
   "repository": {
@@ -23,7 +23,6 @@
   },
   "homepage": "https://github.com/talebhammoude/FE21-JS2-slutprojekt-threemusketeers#readme",
   "devDependencies": {
-    "@parcel/transformer-typescript-tsc": "^2.5.0",
     "@parcel/validator-typescript": "^2.5.0",
     "del-cli": "^4.0.1",
     "parcel": "^2.4.0",
